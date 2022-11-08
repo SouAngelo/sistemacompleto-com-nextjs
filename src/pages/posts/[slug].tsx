@@ -1,12 +1,12 @@
 import { GetServerSideProps } from 'next'
-import { ParsedUrlQuery } from 'querystring'
 import React from 'react'
 import styles from './post.module.sass'
-
+import { ParsedUrlQuery } from 'querystring'
 import getPrismicClient from '../../services/prismic'
-import { RichText } from 'prismic-dom'
 import Head from 'next/head'
 import Image from 'next/image'
+import * as prismicR from '@prismicio/richtext'
+import {RichText} from 'prismic-dom'
 
 interface PostProps{
     post: {
@@ -50,7 +50,7 @@ export default Post
 
 export const getServerSideProps: GetServerSideProps = async ({ req, params}) => {
 
-    const { slug } = params;
+    const { slug } = params as ParsedUrlQuery
     const prismic = getPrismicClient(req)
 
     const response = await prismic.getByUID('post', String(slug), {})
@@ -66,10 +66,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params}) => 
 
     const post = {
         slug: slug, 
-        title: RichText.asText(response.data.title),
+        title: prismicR.asText(response.data.title),
         description: RichText.asHtml(response.data.description),
         cover: response.data.cover.url, 
-        updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
+        updatedAt: new Date(String(response.last_publication_date)).toLocaleDateString('pt-BR', {
             day: '2-digit',
             month: 'long',
             year: 'numeric'

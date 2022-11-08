@@ -11,7 +11,7 @@ import { GetStaticProps } from 'next'
 
 import getPrismicClient from '../../services/prismic'
 import Prismic from '@prismicio/client'
-import {RichText} from 'prismic-dom'
+import * as prismicR from '@prismicio/richtext'
 
 type Post = {
    slug: string;
@@ -58,10 +58,10 @@ function Posts({ posts: postsBlog, page, totalPage }: PostProps) {
      const getPosts: any = response.results.map( post => {
          return{
             slug: post.uid, 
-            title: RichText.asText(post.data.title),
-            description: post.data.description.find((content) => content.type === 'list-item')?.text ?? '',
+            title: prismicR.asText(post.data.title),
+            description: post.data.description.find((content: any) => content.type === 'list-item')?.text ?? '',
             cover: post.data.cover.url,
-            updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
+            updatedAt: new Date(String(post.last_publication_date)).toLocaleDateString('pt-BR', {
                day: '2-digit',
                month: 'long',
                year: 'numeric'
@@ -151,10 +151,10 @@ export const getStaticProps: GetStaticProps = async () =>{
    const posts = response.results.map( post => {
       return{
          slug: post.uid, 
-         title: RichText.asText(post.data.title),
-         description: post.data.description.find((content) => content.type === 'list-item')?.text ?? '',
+         title: prismicR.asText(post.data.title),
+         description: post.data.description.find((content: any) => content.type === 'list-item')?.text ?? '',
          cover: post.data.cover.url,
-         updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
+         updatedAt: new Date(String(post.last_publication_date)).toLocaleDateString('pt-BR', {
             day: '2-digit',
             month: 'long',
             year: 'numeric'
