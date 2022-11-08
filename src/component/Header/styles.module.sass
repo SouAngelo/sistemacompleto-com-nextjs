@@ -7,6 +7,8 @@
     @media(max-width: 870px)
         height: 13rem
         padding: .5rem 0
+    @media(max-width: 380px)
+        height: 14rem
 
 .headerContent
     max-width: 1120px
@@ -17,11 +19,13 @@
     @media(max-width: 870px)
         @include flexbox(none, none, column)
 
-
     & img
         cursor: pointer
         width: 180px
         height: 90px
+        @media(max-width: 380px)
+            width: 130px
+            height: 60px
 
     & nav
         margin-left: 5rem
@@ -30,6 +34,9 @@
             display: block 
             margin-left: auto 
             margin-right: auto
+        @media(max-width: 380px)
+            @include flexbox(center, center, none)
+            flex-wrap: wrap
 
         & a
             display: inline-block
@@ -40,6 +47,10 @@
             color: $white
             font-weight: bold
             transition: color 0.2s
+            @media(max-width: 380px)
+                height: 0
+                padding: 0
+                margin-bottom: 3rem
 
             &:hover
                 color: $white

@@ -74,6 +74,8 @@
         padding: 0 2rem
     @media(max-width: 950px)
         flex-direction: column
+    @media(max-width: 600px)
+        text-align: center
 
     & section
         max-width: 670px
@@ -91,6 +93,12 @@
 
     .webImg
         margin-right: 20px
+        min-width: 300px
+        min-height: 200px
+        @media(max-width: 600px)
+            margin-right: 0
+        @media(max-width: 340px)
+            min-width: 250px
 
     & h2
         font-size: 2.2rem
@@ -113,6 +121,9 @@
     & img 
         width: 300px
         height: 150px
+        @media(max-width: 500px)
+            width: 250px
+            height: 100px
 
     & h2
         font-size: 2.8rem
