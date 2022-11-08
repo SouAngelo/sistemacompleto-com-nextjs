@@ -1,0 +1,79 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "home",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Worried",
+        "spans": []
+      }
+    ],
+    "sub_title": [
+      {
+        "type": "paragraph",
+        "text": "Minim culpa ipsum est proident dolore ex officia consequat aliqua nisi culpa et anim.",
+        "spans": []
+      }
+    ],
+    "link_action": {
+      "link_type": "Web",
+      "url": "http://google.com"
+    },
+    "mobile": [
+      {
+        "type": "heading2",
+        "text": "Scientific",
+        "spans": []
+      }
+    ],
+    "mobile_content": [
+      {
+        "type": "paragraph",
+        "text": "Incididunt magna est quis pariatur esse ad occaecat veniam culpa ullamco reprehenderit in reprehenderit irure amet. Dolor minim sint veniam tempor aute do labore fugiat do proident nostrud.",
+        "spans": []
+      }
+    ],
+    "mobile_banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+    },
+    "title_web": [
+      {
+        "type": "paragraph",
+        "text": "Anim laborum amet culpa elit eiusmod ullamco deserunt veniam cillum ea. Minim magna irure nulla.",
+        "spans": []
+      }
+    ],
+    "web_content": [
+      {
+        "type": "paragraph",
+        "text": "Amet sunt id cillum dolore ea nostrud tempor nostrud. Non nulla ex aliqua ullamco. Sint Lorem culpa nostrud.",
+        "spans": []
+      }
+    ],
+    "web_banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
+    }
+  }
+}

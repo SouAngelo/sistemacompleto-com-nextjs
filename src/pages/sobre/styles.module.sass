@@ -1,0 +1,57 @@
+@import '../../styles/_mixins&variables'
+
+.container
+    display: block
+    padding: 0 2rem
+
+.containerHeader
+    min-height: calc( 100vh - 6rem )
+    margin: 0 auto
+    max-width: 1120px
+    @include flexbox(center, none, none)
+    padding-top: 25px
+    text-align: center
+
+.ctaText
+    max-width: 600px
+    display: flex
+    flex-direction: column
+
+    & h1 
+        margin-bottom: 2rem
+        font-size: 2rem
+        color: $white
+
+    & p 
+        font-size: 1.2rem
+        color: $white
+
+.links
+    margin-top: 2rem
+    @include flexbox(space-between, none, row)
+    @media(max-width: 800px)
+            @include flexbox(center, none, column)
+            width: 300px
+            margin: 5rem auto
+
+    & a
+        height: 3rem
+        border-radius: 3rem
+        background: $blue-900
+        border: 0
+        padding: 0 15px
+        @include flexbox(center, center, none)
+        color: #fff
+        transition: filter .2s
+        font-weight: bold
+        & + a 
+            margin-left: 5px
+            
+        @media(max-width: 800px)
+            margin-bottom: 2rem
+            margin-left: 0
+
+        &:hover
+            filter: brightness(1.1)
+        
+        
